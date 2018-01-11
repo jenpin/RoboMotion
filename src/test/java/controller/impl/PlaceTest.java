@@ -17,19 +17,19 @@ class PlaceTest{
     @Test
     void setValues() {
         place.setFieldValues( "1,-5,WEST" );
-       assertEquals ( place.getyPosition (),-5 );
-       assertEquals ( place.getxPosition (),1 );
-       assertEquals ( place.getDirectionFacing (),"WEST" );
+       assertEquals(place.getyPosition (),-5 );
+       assertEquals(place.getxPosition (),1 );
+       assertEquals(place.getDirectionFacing (),"WEST" );
     }
 
     @Test
     void processCommand_WithValidScenarios() {
-        place.setFieldValues ( "-2,3,EAST" );
+        place.setFieldValues("-2,3,EAST" );
         Robot robot = new Robot ();
-        place.processCommand ( robot );
-        assertEquals ( -2,robot.getxPosition () );
-        assertEquals ( 3,robot.getyPosition () );
-        assertEquals ( "EAST",robot.getDirectionFacing () );
+        place.processCommand(robot );
+        assertEquals(-2,robot.getxPosition () );
+        assertEquals(3,robot.getyPosition () );
+        assertEquals("EAST",robot.getDirectionFacing () );
 
     }
 

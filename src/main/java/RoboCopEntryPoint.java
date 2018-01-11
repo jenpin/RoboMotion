@@ -1,6 +1,3 @@
-
-
-
 import model.Robot;
 import service.CommandUtil;
 import service.CsvFileReader;
@@ -14,13 +11,13 @@ public class RoboCopEntryPoint {
         CsvFileReader csvFileReader = new CsvFileReader ();
         Validator validate = new Validator ();
         CommandUtil commandUtil = new CommandUtil ();
-        commandUtil.setPlaceCommand ( false );
+        commandUtil.setPlaceCommand(false );
         Robot robot = new Robot();
 
-        List<String> commandList = csvFileReader.readFile ( commandFile );
+        List<String> commandList = csvFileReader.readFile(commandFile );
         for(String fileCommand : commandList){
-            if (validate.isValidCommand ( fileCommand ) && commandUtil.isPlaceCommand ()){
-                commandUtil.getCommandObject ( fileCommand ).processCommand ( robot );
+            if (validate.isValidCommand(fileCommand ) && commandUtil.isPlaceCommand ()){
+                commandUtil.getCommandObject(fileCommand ).processCommand(robot );
             }
         }
 

@@ -22,20 +22,20 @@ class CsvFileReaderTest {
 
     @Test
     void readFile_shouldReturnListSize12() {
-       List <String> outputList = reader.readFile ( "/src/com/pintoj4/resources/data/basicInputFile" );
-       assertEquals ( 12,outputList.size () );
+       List <String> outputList = reader.readFile("/src/com/pintoj4/resources/data/basicInputFile" );
+       assertEquals(12,outputList.size () );
     }
 
     @Test
     void readFile_shouldReturnDefaultListSize6() {
-        List <String> outputList = reader.readFile ( "" );
-        assertEquals ( 6,outputList.size () );
+        List <String> outputList = reader.readFile("" );
+        assertEquals(6,outputList.size () );
     }
 
     @Test
     void readFile_shouldReturnDefaultNullListSize6() {
-        List <String> outputList = reader.readFile ( null );
-        assertEquals ( 6,outputList.size () );
+        List <String> outputList = reader.readFile(null );
+        assertEquals(6,outputList.size () );
     }
 
 }

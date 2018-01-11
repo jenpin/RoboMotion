@@ -12,43 +12,43 @@ class ValidatorTest  {
 
     @Before
     static void setUp() {
-        validate = new Validator ( );
+        validate = new Validator();
     }
 
     @Test
     void isValidCommand_returnFalseforLowerCase() {
         String commandList = "move 123" ;
-         assertFalse ( validate.isValidCommand ( commandList ) );
+         assertFalse(validate.isValidCommand(commandList));
     }
 
     @Test
     void isValidCommand_returnTrueforValidCommand() {
         String commandList =  "PLACE 123" ;
-        assertTrue ( validate.isValidCommand ( commandList ) );
+        assertTrue(validate.isValidCommand(commandList));
     }
 
     @Test
     void isValidCommand_returnTrue() {
-        assertTrue ( validate.isValidCommand ( "MOVE" ) );
+        assertTrue(validate.isValidCommand("MOVE"));
     }
 
     @Test
     void isValidCommand_returnFalseforInvalid() {
-       assertFalse ( validate.isValidCommand ( "Hype" ) );
+       assertFalse(validate.isValidCommand("Hype"));
     }
 
     @Test
     void validateMove_returnTrue() {
-        assertTrue ( validate.validateMove ( -3 ) );
+        assertTrue(validate.validateMove(-3));
     }
 
     @Test
     void validateMove_returnFalseValid() {
-        assertFalse ( validate.validateMove ( -6 ) );
+        assertFalse(validate.validateMove(-6));
     }
 
     @Test
     void validateMove_returnTrueBoundary() {
-        assertTrue ( validate.validateMove ( 5 ) );
+        assertTrue(validate.validateMove(5));
     }
 }
