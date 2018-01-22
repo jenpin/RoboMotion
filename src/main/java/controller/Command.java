@@ -5,5 +5,5 @@ import model.Robot;
 
 public interface Command {
 
-    public void processCommand(Robot robot);
+    void processCommand(Robot robot);
 }
