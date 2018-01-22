@@ -10,30 +10,30 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 
-class CsvFileReaderTest {
+public class CsvFileReaderTest {
 
-    private static CsvFileReader reader;
+    private CsvFileReader reader;
 
     @Before
-    static void setUp() {
+    public void setUp() {
         reader = new CsvFileReader ();
     }
 
 
     @Test
-    void readFile_shouldReturnListSize12() {
-       List <String> outputList = reader.readFile("/src/com/pintoj4/resources/data/basicInputFile" );
+    public void readFile_shouldReturnListSize12() {
+       List <String> outputList = reader.readFile("src/main/resources/basicInputFile" );
        assertEquals(12,outputList.size () );
     }
 
     @Test
-    void readFile_shouldReturnDefaultListSize6() {
+    public void readFile_shouldReturnDefaultListSize6() {
         List <String> outputList = reader.readFile("" );
         assertEquals(6,outputList.size () );
     }
 
     @Test
-    void readFile_shouldReturnDefaultNullListSize6() {
+    public void readFile_shouldReturnDefaultNullListSize6() {
         List <String> outputList = reader.readFile(null );
         assertEquals(6,outputList.size () );
     }

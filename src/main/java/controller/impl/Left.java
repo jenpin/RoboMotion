@@ -12,18 +12,18 @@ public class Left implements Command {
     @Override
     public void processCommand(Robot robot) {
 
-        switch (robot.getDirectionFacing ( )) {
+        switch (robot.getDirectionFacing()) {
             case NORTH:
-                robot.setDirectionFacing ( RoboConstants.DIRECTION.WEST );
+                robot.setDirectionFacing(RoboConstants.DIRECTION.WEST );
                 break;
             case SOUTH:
-                robot.setDirectionFacing ( DIRECTION.EAST );
+                robot.setDirectionFacing(DIRECTION.EAST );
                 break;
             case EAST:
-                robot.setDirectionFacing ( DIRECTION.NORTH );
+                robot.setDirectionFacing(DIRECTION.NORTH );
                 break;
             case WEST:
-                robot.setDirectionFacing ( DIRECTION.SOUTH );
+                robot.setDirectionFacing(DIRECTION.SOUTH );
                 break;
         }
     }

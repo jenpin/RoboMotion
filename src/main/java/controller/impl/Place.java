@@ -4,9 +4,10 @@ package controller.impl;
 import controller.Command;
 import model.Robot;
 import service.CommandUtil;
-import utils.RoboConstants;
 
 import java.util.List;
+
+import static utils.RoboConstants.*;
 
 
 public class Place implements Command {
@@ -28,7 +29,7 @@ public class Place implements Command {
     }
 
     public void setFieldValues(String tokenList){
-        List<String> tokens = CommandUtil.splitCommandByRegex ( tokenList,",");
+        List<String> tokens = CommandUtil.splitCommandByRegex(tokenList,",");
         xPosition = Integer.parseInt (tokens.get(0));
         yPosition = Integer.parseInt (tokens.get(1));
         directionFacing = tokens.get(2);
@@ -36,8 +37,8 @@ public class Place implements Command {
 
     @Override
     public void processCommand(Robot robot) {
-        robot.setxPosition ( xPosition);
-        robot.setyPosition ( yPosition);
-        robot.setDirectionFacing ( RoboConstants.DIRECTION.valueOf ( directionFacing ) );
+        robot.setxPosition(xPosition);
+        robot.setyPosition(yPosition);
+        robot.setDirectionFacing( DIRECTION.valueOf(directionFacing));
     }
 }

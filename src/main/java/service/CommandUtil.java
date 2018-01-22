@@ -23,34 +23,34 @@ public class CommandUtil {
     }
 
     public static List<String> splitCommandByRegex (String token,String regex){
-       return Arrays.asList (token.split ( regex));
+       return Arrays.asList (token.split(regex));
     }
 
     public RoboConstants.Commands getCommand(String command) {
-        List<String> eachToken = CommandUtil.splitCommandByRegex ( command, "\\s" );
-        setParams ( eachToken );
-        return  RoboConstants.Commands.valueOf ( eachToken.get ( 0 ) ) ;
+        List<String> eachToken = CommandUtil.splitCommandByRegex(command, "\\s" );
+        setParams(eachToken );
+        return  RoboConstants.Commands.valueOf(eachToken.get(0)) ;
     }
 
     public void setParams (List<String> token) {
         if(token.size () == 2 ){
-            params = token.get ( 1 );
+            params = token.get(1 );
         }
     }
 
     public Command getCommandObject(String commandType) {
-        switch (getCommand ( commandType )) {
+        switch (getCommand(commandType )) {
             case MOVE:
-                return new Move ( );
+                return new Move();
             case LEFT:
-                return new Left ( );
+                return new Left();
             case RIGHT:
-                return new Right ( );
+                return new Right();
             case REPORT:
-                return new Report ( );
+                return new Report();
             case PLACE:
-                Place placeCommand = new Place ( );
-                placeCommand.setFieldValues ( params );
+                Place placeCommand = new Place();
+                placeCommand.setFieldValues(params );
                 return placeCommand;
         }
         return null;

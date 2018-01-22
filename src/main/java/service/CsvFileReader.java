@@ -9,20 +9,20 @@ import java.util.List;
 
 
 public class CsvFileReader implements FileReader {
-    String defaultFile = "/Users/jpinto/ControlYourRobot/src/main/resources/defaultInputFile";
+    String defaultFile = "src/main/resources/defaultInputFile";
 
     @Override
     public List<String> readFile(String fileName) {
         fileName = ((fileName != null && !fileName.isEmpty ()) ? fileName : defaultFile );
-        List<String> commandList = new ArrayList<> ( );
+        List<String> commandList = new ArrayList<>();
 
         try {
-            Iterator<String> iter = Files.lines ( Paths.get ( fileName ) ).iterator ( );
-            while (iter.hasNext ( )) {
-                commandList.add ( iter.next ( ) );
+            Iterator<String> iter = Files.lines(Paths.get(fileName)).iterator();
+            while (iter.hasNext()) {
+                commandList.add(iter.next() );
             }
-        } catch ( IOException e ) {
-            e.printStackTrace ( );
+        } catch(IOException e ) {
+            e.printStackTrace();
         }
         return commandList;
     }

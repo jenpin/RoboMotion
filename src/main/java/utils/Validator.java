@@ -12,10 +12,10 @@ public class Validator {
     public boolean isValidCommand(String command) {
 
         try {
-            List<String> eachToken = CommandUtil.splitCommandByRegex ( command, "\\s" );
-            validateCommandLength ( eachToken );
-            RoboConstants.Commands.valueOf ( eachToken.get ( 0 ) );
-        } catch ( IllegalArgumentException e ) {
+            List<String> eachToken = CommandUtil.splitCommandByRegex(command, "\\s" );
+            validateCommandLength(eachToken );
+            RoboConstants.Commands.valueOf(eachToken.get(0));
+        } catch(IllegalArgumentException e ) {
             return false;
         }
         return true;
@@ -26,11 +26,11 @@ public class Validator {
     }
 
     public boolean validateCommandLength(List<String> tokenList){
-        if(tokenList.get ( 0 ).equals ( RoboConstants.Commands.PLACE.name () ) && tokenList.size () == 2){
-            if(CommandUtil.splitCommandByRegex ( tokenList.get ( 1 ), "," ).size ()!=3){
+        if(tokenList.get(0 ).equals(RoboConstants.Commands.PLACE.name () ) && tokenList.size () == 2){
+            if(CommandUtil.splitCommandByRegex(tokenList.get(1 ), "," ).size ()!=3){
                 return false;
             }
-            commandUtil.setPlaceCommand ( true );
+            commandUtil.setPlaceCommand(true );
         }else if(tokenList.size ()!=1){
             return false;
         }

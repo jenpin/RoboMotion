@@ -2,25 +2,27 @@ package controller.impl;
 
 
 import model.Robot;
-import org.junit.BeforeClass;
+import org.junit.Before;
 import org.junit.Test;
-import utils.RoboConstants;
 
 
 import static org.junit.Assert.assertEquals;
-import static utils.RoboConstants.DIRECTION.*;
+import static utils.RoboConstants.DIRECTION.WEST;
+import static utils.RoboConstants.DIRECTION.SOUTH;
+import static utils.RoboConstants.DIRECTION.EAST;
+import static utils.RoboConstants.DIRECTION.NORTH;
 
 
-class LeftTest{
-    private static Left left;
+public class LeftTest{
+    private Left left;
 
-    @BeforeClass
-    public  void setUp() {
+    @Before
+    public void setUp() {
         left = new Left();
     }
 
     @Test
-    public  void processCommand_LeftFacingWest() {
+    public void processCommand_LeftFacingWest() {
         Robot robot = new Robot ();
         robot.setyPosition(3 );
         robot.setxPosition(-2 );
@@ -58,7 +60,7 @@ class LeftTest{
         Robot robot = new Robot ();
         robot.setDirectionFacing(SOUTH);
         left.processCommand(robot );
-        assertEquals("EAST",robot.getDirectionFacing () );
+        assertEquals(EAST,robot.getDirectionFacing () );
 
     }
 

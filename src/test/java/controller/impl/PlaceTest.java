@@ -5,32 +5,33 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static utils.RoboConstants.DIRECTION.EAST;
+import static utils.RoboConstants.DIRECTION.WEST;
 
-class PlaceTest{
+public class PlaceTest{
 
-    private static Place place;
+    public  Place place;
     @Before
-    static void setUp() {
+    public void setUp() {
         place = new Place ();
     }
 
     @Test
-    void setValues() {
+    public void setValues() {
         place.setFieldValues( "1,-5,WEST" );
-       assertEquals(place.getyPosition (),-5 );
-       assertEquals(place.getxPosition (),1 );
-       assertEquals(place.getDirectionFacing (),"WEST" );
+       assertEquals(-5,place.getyPosition () );
+       assertEquals(1,place.getxPosition () );
+       assertEquals("WEST" ,place.getDirectionFacing ());
     }
 
     @Test
-    void processCommand_WithValidScenarios() {
+    public void processCommand_WithValidScenarios() {
         place.setFieldValues("-2,3,EAST" );
         Robot robot = new Robot ();
         place.processCommand(robot );
         assertEquals(-2,robot.getxPosition () );
         assertEquals(3,robot.getyPosition () );
-        assertEquals("EAST",robot.getDirectionFacing () );
-
+        assertEquals(EAST,robot.getDirectionFacing () );
     }
 
 }

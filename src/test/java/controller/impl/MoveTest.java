@@ -9,16 +9,16 @@ import static org.junit.Assert.assertEquals;
 import static utils.RoboConstants.DIRECTION.*;
 
 
-class MoveTest  {
-    private static Move move;
+public class MoveTest  {
+    private Move move;
 
     @Before
-    static void setUp() {
+    public void setUp() {
         move = new Move ();
     }
 
     @Test
-    void processCommand_robotFacingNorth() {
+    public void processCommand_robotFacingNorth() {
         Robot robot = new Robot ();
         robot.setyPosition(3 );
         robot.setxPosition(-2 );
@@ -30,7 +30,7 @@ class MoveTest  {
     }
 
     @Test
-    void processCommand_robotFacingSouth() {
+   public void processCommand_robotFacingSouth() {
         Robot robot = new Robot ();
         robot.setyPosition(3 );
         robot.setxPosition(-2 );
@@ -42,7 +42,7 @@ class MoveTest  {
     }
 
     @Test
-    void processCommand_robotFacingEast() {
+    public void processCommand_robotFacingEast() {
         Robot robot = new Robot ();
         robot.setyPosition(3 );
         robot.setxPosition(-2 );
@@ -54,7 +54,7 @@ class MoveTest  {
     }
 
     @Test
-    void processCommand_robotFacingWest() {
+   public void processCommand_robotFacingWest() {
         Robot robot = new Robot ();
         robot.setyPosition(3 );
         robot.setxPosition(-2 );
